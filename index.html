@@ -4,26 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shrinidhi's Computer Science and AI/ML project portfolio">
+  <meta name="description" content="Shrinidhi D S — AI/ML student, Python developer, and software engineering project portfolio.">
   <meta name="author" content="Shrinidhi D S">
-  <title>Shrinidhi D S | AI/ML Portfolio</title>
+  <meta name="theme-color" content="#0b1020">
+  <title>Shrinidhi D S | AI/ML & Software Engineering</title>
 
   <style>
     :root {
       --bg: #0b1020;
       --panel: #121a2d;
+      --panel2: #17223a;
       --text: #f1f5f9;
       --muted: #a5b4cc;
-      --accent: #7c9cff;
-      --border: #26334d;
+      --accent: #91aaff;
+      --border: #293650;
+      --green: #91e6c0;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -39,26 +41,29 @@
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    a:hover { text-decoration: underline; }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
 
     .container {
-      width: min(1080px, 90%);
-      margin: auto;
+      width: min(1120px, 90%);
+      margin: 0 auto;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: #0b1020ee;
+      background: rgba(11, 16, 32, 0.95);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     nav {
-      min-height: 68px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -66,88 +71,110 @@
     }
 
     .logo {
+      color: var(--text);
       font-size: 1.15rem;
-      font-weight: bold;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
       flex-wrap: wrap;
+      gap: 18px;
     }
 
     .nav-links a {
       color: var(--text);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .hero {
       padding: 100px 0 85px;
+      min-height: 510px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     .eyebrow {
       color: var(--accent);
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
+      font-size: 0.85rem;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 7vw, 4.7rem);
-      line-height: 1.12;
       margin: 16px 0;
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      line-height: 1.1;
+      letter-spacing: -2px;
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 4vw, 2.2rem);
+      line-height: 1.25;
+    }
+
+    h3 {
+      line-height: 1.35;
     }
 
     .hero p,
     .section-intro {
-      max-width: 690px;
+      max-width: 760px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
     }
 
     .buttons {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      gap: 12px;
+      margin-top: 24px;
     }
 
     .button {
       display: inline-block;
-      padding: 11px 19px;
+      padding: 11px 18px;
       border-radius: 9px;
       background: var(--accent);
       color: #081020;
-      font-weight: bold;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+    }
+
+    .button:hover {
+      text-decoration: none;
+      opacity: 0.9;
     }
 
     .button.secondary {
       background: transparent;
       color: var(--text);
-      border: 1px solid var(--border);
+      border-color: var(--border);
     }
 
     section {
-      padding: 65px 0;
-      scroll-margin-top: 70px;
+      padding: 66px 0;
+      border-top: 1px solid rgba(41, 54, 80, 0.55);
+    }
+
+    .section-heading {
+      margin-bottom: 26px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(250px, 1fr)
-      );
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
       margin-top: 28px;
     }
 
     .card {
+      min-width: 0;
       padding: 24px;
       background: var(--panel);
       border: 1px solid var(--border);
@@ -155,32 +182,111 @@
     }
 
     .card h3 {
-      margin-top: 0;
+      margin: 0 0 10px;
+      font-size: 1.2rem;
     }
 
     .card p {
       color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 15px;
     }
 
     .tag {
       display: inline-block;
-      margin: 4px 4px 4px 0;
       padding: 4px 10px;
       border: 1px solid var(--border);
       border-radius: 20px;
       color: var(--muted);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
     }
 
-    .skills {
+    .status {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      color: var(--green);
+      border: 1px solid #315847;
+      font-size: 0.78rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .experience-item {
+      margin-top: 20px;
+      padding: 24px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .experience-item h3 {
+      margin: 0;
+    }
+
+    .meta {
+      color: var(--accent);
+      font-size: 0.93rem;
+    }
+
+    .experience-item li,
+    .card li {
+      margin: 8px 0;
+      color: var(--muted);
+    }
+
+    .resume-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .resume-card p {
+      max-width: 650px;
+    }
+
+    .education-item {
+      margin-top: 18px;
+    }
+
+    .education-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .education-item p {
+      margin: 5px 0;
+      color: var(--muted);
+    }
+
+    .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
       margin-top: 22px;
     }
 
-    .contact-card {
-      padding: 28px;
+    .contact-links a {
+      overflow-wrap: anywhere;
     }
 
     footer {
@@ -188,56 +294,63 @@
       text-align: center;
       color: var(--muted);
       border-top: 1px solid var(--border);
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 720px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
         padding: 15px 0;
       }
 
-      .nav-links {
-        gap: 12px;
-      }
+      .nav-links { gap: 10px 15px; }
 
       .hero {
-        padding: 65px 0;
+        padding: 70px 0;
+        min-height: auto;
       }
 
-      section {
-        padding: 45px 0;
+      h1 { letter-spacing: -1px; }
+
+      section { padding: 48px 0; }
+
+      .grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
       }
 
-      h2 {
-        font-size: 1.7rem;
-      }
+      .card { padding: 20px; }
+    }
 
-      .card {
-        padding: 20px;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <nav class="container">
+    <nav class="container" aria-label="Main navigation">
       <a class="logo" href="#home">Shrinidhi.dev</a>
 
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- HERO -->
     <section class="hero container" id="home">
-      <div class="eyebrow">Computer Science · AI/ML</div>
+      <div class="eyebrow">Computer Science · AI/ML · Python</div>
 
       <h1>
         Hi, I'm Shrinidhi.<br>
@@ -246,284 +359,469 @@
       </h1>
 
       <p>
-        I'm a Computer Science and Engineering student specializing
-        in Artificial Intelligence and Machine Learning. I'm learning
-        by building practical projects in Python, machine learning,
-        and software development.
+        I'm a Bachelor of Engineering student specializing in Artificial
+        Intelligence and Machine Learning. I build practical projects in
+        Python, machine learning, and software development, and I'm
+        developing my skills through internships and hands-on engineering.
       </p>
 
       <div class="buttons">
-        <a class="button" href="#projects">
-          Explore my projects
-        </a>
-
-        <a
-          class="button secondary"
-          href="https://github.com/Shrinidhi-02"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My GitHub ↗
-        </a>
+        <a class="button" href="#projects">Explore my projects ↓</a>
+        <a class="button secondary"
+           href="resume.pdf"
+           target="_blank"
+           rel="noopener noreferrer">View my resume ↗</a>
+        <a class="button secondary"
+           href="https://github.com/Shrinidhi-02"
+           target="_blank"
+           rel="noopener noreferrer">GitHub ↗</a>
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="container">
-        <h2>About me</h2>
-
-        <p class="section-intro">
-          I'm developing my skills in AI/ML and software engineering
-          through hands-on projects. I enjoy understanding how systems
-          work, solving technical problems, and turning ideas into
-          working applications. My goal is to keep learning and
-          contribute to real-world projects.
-        </p>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <div class="container">
-        <h2>Technical skills</h2>
-
-        <p class="section-intro">
-          Technologies I've been learning and using in projects.
-        </p>
-
-        <div class="skills">
-          <span class="tag">Python</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">NumPy</span>
-          <span class="tag">Scikit-learn</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Git &amp; GitHub</span>
-          <span class="tag">HTML &amp; CSS</span>
-          <span class="tag">Jupyter Notebook</span>
-          <span class="tag">pytest</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">NestJS</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Streamlit</span>
+        <div class="section-heading">
+          <h2>About me</h2>
+          <p class="section-intro">
+            I'm an AI/ML undergraduate interested in Python development,
+            data science, machine learning, and software engineering.
+            I enjoy understanding how systems work, solving technical
+            problems, and turning ideas into practical applications.
+          </p>
+          <p class="section-intro">
+            My experience includes machine learning internship assignments,
+            collaborative development of an AST-based debugging tool, and
+            projects involving forecasting, backend APIs, and AI-assisted
+            code generation. I'm interested in AI/ML, Data Science, and
+            Python Developer internship opportunities.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <h2>Technical skills</h2>
+        <p class="section-intro">
+          Technologies and tools I've used or studied in coursework,
+          internships, and projects.
+        </p>
+
+        <div class="skills-grid">
+          <article class="card">
+            <h3>Programming languages</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Machine learning and data</h3>
+            <div class="tags">
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">Seaborn</span>
+              <span class="tag">Random Forest</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Backend and application development</h3>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Prisma ORM</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">SQLite</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Tools and AI</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">Jupyter Notebook</span>
+              <span class="tag">Google Colab</span>
+              <span class="tag">pytest</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Prompt Engineering</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
     <section id="projects">
       <div class="container">
-        <h2>Featured projects</h2>
-
+        <h2>Projects and practical work</h2>
         <p class="section-intro">
-          A selection of my software engineering and AI/ML work.
-          Open each repository to explore the code and current progress.
+          Explore my individual projects, collaborative engineering work,
+          and internship assignments. Team projects are identified as such.
         </p>
 
         <div class="grid">
 
-          <!-- PyChronicle -->
           <article class="card">
-            <h3>PyChronicle</h3>
-
+            <span class="status">Team project</span>
+            <h3>PyChronicle — AST-Powered Time-Travel Debugger</h3>
             <p>
-              An AST-powered time-travel debugging project exploring
-              Python code instrumentation and execution history.
+              A Python debugging project that explores AST-based code
+              instrumentation and historical execution state. My work
+              includes an AST rewriter that injects state-capturing hooks
+              without directly modifying the original source code.
             </p>
-
-            <span class="tag">Python</span>
-            <span class="tag">AST</span>
-            <span class="tag">pytest</span>
-
-            <p>
-              <a
-                href="https://github.com/harshNIU/PyChronicle-AST-Powered-Time-Travel-Debugger"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View repository ↗
-              </a>
-            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">AST</span>
+              <span class="tag">Code Instrumentation</span>
+              <span class="tag">pytest</span>
+            </div>
+            <a class="card-link"
+               href="https://github.com/harshNIU/PyChronicle-AST-Powered-Time-Travel-Debugger"
+               target="_blank" rel="noopener noreferrer">View repository ↗</a>
+            <p>Contribution branch: <code>Shrinidhi-ast-engine</code></p>
           </article>
 
-          <!-- MeshWeaver -->
           <article class="card">
+            <span class="status">Team project</span>
             <h3>MeshWeaver P2P Task Broker</h3>
-
             <p>
-              A peer-to-peer networking project exploring UDP messaging,
-              message envelopes, and PING/PONG communication.
+              A peer-to-peer networking project exploring UDP communication,
+              message envelopes, and PING/PONG messaging. My contribution
+              includes implementing UDP node communication and message types,
+              with unit tests for the networking components.
             </p>
-
-            <span class="tag">Python</span>
-            <span class="tag">UDP</span>
-            <span class="tag">Networking</span>
-
-            <p>
-              <a
-                href="https://github.com/harshNIU/meshweaver-p2p-task-broker"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View repository ↗
-              </a>
-            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">UDP</span>
+              <span class="tag">Networking</span>
+              <span class="tag">unittest</span>
+              <span class="tag">Git</span>
+            </div>
+            <a class="card-link"
+               href="https://github.com/harshNIU/meshweaver-p2p-task-broker"
+               target="_blank" rel="noopener noreferrer">View repository ↗</a>
           </article>
 
-          <!-- Retail Demand Forecasting -->
           <article class="card">
-            <h3>Retail Demand Forecasting</h3>
-
+            <h3>Retail Demand Forecasting System</h3>
             <p>
-              A machine learning project using historical sales data,
-              feature engineering, and a Random Forest regression model
-              to predict demand.
+              A machine learning project using historical sales data and
+              date-based feature engineering to train and evaluate a
+              Random Forest regression model. The resume reports an RMSE
+              of 2.95 and an R² score of 0.624 on the evaluated data.
             </p>
-
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">Random Forest</span>
-
-            <p>
-              <a
-                href="https://github.com/Shrinidhi-02/Retail-Demand-Forecasting"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View repository ↗
-              </a>
-            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Random Forest</span>
+            </div>
+            <a class="card-link"
+               href="https://github.com/Shrinidhi-02/Retail-Demand-Forecasting"
+               target="_blank" rel="noopener noreferrer">View repository ↗</a>
           </article>
 
-          <!-- Compensation Intelligence System -->
-          <article class="card">
-            <h3>Compensation Intelligence System</h3>
-
-            <p>
-              A backend development project exploring APIs, database
-              integration, and structured application design.
-            </p>
-
-            <span class="tag">Node.js</span>
-            <span class="tag">NestJS</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">PostgreSQL</span>
-
-            <p>
-              <a
-                href="https://github.com/Shrinidhi-02/compensation-intelligence-system"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View repository ↗
-              </a>
-            </p>
-          </article>
-
-          <!-- Mini Devin -->
           <article class="card">
             <h3>AI Software Engineer — Mini Devin</h3>
-
             <p>
-              An AI-powered Python coding assistant that helps generate
-              code, create project files, run tests, and track project
-              execution through an application interface.
+              An AI-assisted coding agent that takes a natural-language
+              requirement through planning, code generation, file creation,
+              testing, and execution. The project also includes project
+              history and analytics backed by SQLite.
             </p>
-
-            <span class="tag">Python</span>
-            <span class="tag">OpenAI API</span>
-            <span class="tag">Streamlit</span>
-            <span class="tag">SQLite</span>
-
-            <p>
-              <a
-                href="https://github.com/Shrinidhi-02/ai-software-engineer-mini-devin"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View repository ↗
-              </a>
-            </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Automated Testing</span>
+            </div>
+            <a class="card-link"
+               href="https://github.com/Shrinidhi-02/ai-software-engineer-mini-devin"
+               target="_blank" rel="noopener noreferrer">View repository ↗</a>
           </article>
 
-          <!-- FlyRank Internship -->
           <article class="card">
+            <h3>Compensation Intelligence System</h3>
+            <p>
+              A backend engineering project focused on building structured
+              APIs and integrating a relational database. The project
+              technology stack includes NestJS, TypeScript, PostgreSQL,
+              Prisma ORM, and API documentation tools.
+            </p>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Prisma ORM</span>
+            </div>
+            <a class="card-link"
+               href="https://github.com/Shrinidhi-02/compensation-intelligence-system"
+               target="_blank" rel="noopener noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="card">
+            <span class="status">Internship work</span>
             <h3>FlyRank ML Internship</h3>
-
             <p>
-              Machine learning internship assignments focused on
-              data exploration, feature engineering, baseline models,
-              evaluation, and reproducible notebook workflows.
+              Machine learning assignments using anonymized search and
+              content data. Work includes exploratory data analysis,
+              rule-based baselines, decision-tree models, ranking
+              evaluations, feature-leakage checks, and reproducible
+              Python notebooks.
             </p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Jupyter</span>
+              <span class="tag">Model Evaluation</span>
+            </div>
+            <a class="card-link"
+               href="https://github.com/Shrinidhi-02/flyrank-machine-learning"
+               target="_blank" rel="noopener noreferrer">View repository ↗</a>
+          </article>
 
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Jupyter Notebook</span>
-            <span class="tag">Machine Learning</span>
-
+          <article class="card">
+            <span class="status">Concept / in planning</span>
+            <h3>AegisAI — AI Security Gateway</h3>
             <p>
-              <a
-                href="https://github.com/Shrinidhi-02/flyrank-machine-learning"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View repository ↗
-              </a>
+              A planned defensive AI security project focused on identifying
+              prompt injection, reducing sensitive-data leakage, protecting
+              system instructions, and filtering unsafe or malicious inputs.
+              This is a concept entry, not a claim of a completed product.
             </p>
+            <div class="tags">
+              <span class="tag">AI Security</span>
+              <span class="tag">Prompt Injection</span>
+              <span class="tag">Data Protection</span>
+              <span class="tag">Defensive AI</span>
+            </div>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <h2>Experience</h2>
+        <p class="section-intro">
+          Internship experience and practical engineering contributions
+          described in my resume.
+        </p>
+
+        <article class="experience-item">
+          <h3>Machine Learning Intern — FlyRank AI</h3>
+          <p class="meta">Remote · September 2026 – Present</p>
+          <ul>
+            <li>
+              Developed an explainable rule-based baseline score to
+              prioritize content for review using freshness, CTR,
+              search position, and impressions.
+            </li>
+            <li>
+              Built a ranked review queue with reason codes and action
+              labels, documenting selection reasoning and potential errors.
+            </li>
+            <li>
+              Evaluated performance signals and documented limitations
+              and possible sources of error.
+            </li>
+            <li>
+              Performed feature-leakage checks and created reproducible
+              Python and Pandas notebooks using Git and GitHub.
+            </li>
+          </ul>
+          <a href="https://github.com/Shrinidhi-02/flyrank-machine-learning"
+             target="_blank" rel="noopener noreferrer">Internship work on GitHub ↗</a>
+        </article>
+
+        <article class="experience-item">
+          <h3>Python Development Intern — Infotact Solutions</h3>
+          <p class="meta">Remote · September 2026 – Present</p>
+          <ul>
+            <li>
+              Contributed to PyChronicle, an AST-powered time-travel
+              debugger, as part of a five-member team.
+            </li>
+            <li>
+              Developed AST-based analysis and source-rewriting logic
+              to identify code structures and inject state-capturing hooks.
+            </li>
+            <li>
+              Tested sample scripts involving loops, conditionals,
+              and functions, and worked on edge cases.
+            </li>
+            <li>
+              Collaborated with the execution-engine contributor to
+              define the interface between the rewriter and tracer.
+            </li>
+          </ul>
+          <a href="https://github.com/harshNIU/PyChronicle-AST-Powered-Time-Travel-Debugger"
+             target="_blank" rel="noopener noreferrer">PyChronicle repository ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <h2>Education</h2>
+
+        <article class="experience-item education-item">
+          <h3>Bachelor of Engineering — Artificial Intelligence and Machine Learning</h3>
+          <p>Akash Group of Institutions, Bengaluru</p>
+          <p>Expected graduation: 2027</p>
+          <p>CGPA: 7.1 / 10</p>
+        </article>
+
+        <article class="experience-item education-item">
+          <h3>Class 12 — Pre-University Course (PCMB)</h3>
+          <p>SDM PU College, Ujire · 2023</p>
+          <p>Score: 383 / 600 · First Class</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <h2>Certifications and learning</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Oracle Certified Foundations Associate</h3>
+            <p>AI Foundations &amp; Agentic AI</p>
+          </article>
+
+          <article class="card">
+            <h3>IBM SkillsBuild</h3>
+            <p>AI Fundamentals</p>
+          </article>
+
+          <article class="card">
+            <h3>Udemy</h3>
+            <p>Machine Learning &amp; AI Beginners Course</p>
+          </article>
+
+          <article class="card">
+            <h3>HackerRank</h3>
+            <p>Python (Basic) Certification</p>
+          </article>
+
+          <article class="card">
+            <h3>Oracle</h3>
+            <p>SQL Explorer</p>
+          </article>
+
+          <article class="card">
+            <h3>OfficeMaster</h3>
+            <p>Power BI Workshop</p>
+          </article>
+        </div>
+
+        <div class="experience-item">
+          <h3>Languages</h3>
+          <div class="tags">
+            <span class="tag">English</span>
+            <span class="tag">Hindi</span>
+            <span class="tag">Kannada</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume">
+      <div class="container">
+        <div class="card resume-card">
+          <div>
+            <h2>My resume</h2>
+            <p class="section-intro">
+              View my education, internship experience, technical skills,
+              certifications, and selected projects in my resume.
+            </p>
+            <p class="meta">PDF document</p>
+          </div>
+
+          <div class="buttons">
+            <a class="button"
+               href="resume.pdf"
+               target="_blank"
+               rel="noopener noreferrer">View resume ↗</a>
+
+            <a class="button secondary"
+               href="resume.pdf"
+               download="Shrinidhi-DS-Resume.pdf">Download resume ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
-        <div class="card contact-card">
+        <div class="card">
           <h2>Let's connect</h2>
-
           <p class="section-intro">
-            I'm interested in learning opportunities, internships,
-            and collaborating on meaningful technical projects.
+            I'm interested in AI/ML, Data Science, and Python development
+            opportunities, internships, and meaningful technical projects.
+            Feel free to connect with me.
           </p>
 
           <div class="buttons">
-            <a
-              class="button"
-              href="https://github.com/Shrinidhi-02"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub ↗
-            </a>
+            <a class="button"
+               href="mailto:shrinidhigowda.02@gmail.com">Email me ↗</a>
 
-            <a
-              class="button secondary"
-              href="https://www.linkedin.com/in/shrinidhi-d-s-16a66a353"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn ↗
-            </a>
+            <a class="button secondary"
+               href="https://github.com/Shrinidhi-02"
+               target="_blank"
+               rel="noopener noreferrer">GitHub ↗</a>
 
-            <a
-              class="button secondary"
-              href="mailto:shrinidhigowda.02@gmail.com"
-            >
-              Email me ↗
+            <a class="button secondary"
+               href="https://www.linkedin.com/in/shrinidhi-d-s-16a66a353"
+               target="_blank"
+               rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+
+          <div class="contact-links">
+            <a href="mailto:shrinidhigowda.02@gmail.com">
+              shrinidhigowda.02@gmail.com
             </a>
+            <a href="tel:+917619640838">+91 7619640838</a>
+            <span class="meta">Bengaluru, India</span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>Built with HTML and CSS · © 2026 Shrinidhi D S</p>
+      <p>
+        Built with HTML and CSS · © 2026 Shrinidhi D S
+      </p>
+      <p>
+        <a href="#home">Back to top ↑</a>
+      </p>
     </div>
   </footer>
 </body>
